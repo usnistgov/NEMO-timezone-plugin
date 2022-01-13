@@ -1,0 +1,24 @@
+<div id="user_preference_tz">
+	<div class="panel panel-default">
+		<div class="panel-body form-horizontal">
+			<h3>Timezone</h3>
+			<div class="form-group">
+				<div class="col-md-4">
+					<select id="user_preference_select" class="form-control" name="user_preference_tz">
+						<option value=""></option>
+						{% for user_tz in timezones %}
+							<option value="{{ user_tz }}" {% if user_tz == user_timezone %}selected{% endif %}>{{ user_tz }}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<label class="control-label col-md-8" style="text-align: left" for="user_preference_select">Select your timezone. Leave blank to use the default server timezone.</label>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	{# Insert our HTML fragment at the end of the form, right before the submit button #}
+	let user_preference_tz = document.getElementById("user_preference_tz");
+    let submit_button = $('.container form input[type=submit]')[0];
+	submit_button.parentNode.insertBefore(user_preference_tz, submit_button);
+</script>

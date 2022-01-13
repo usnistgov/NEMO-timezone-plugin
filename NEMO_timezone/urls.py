@@ -1,7 +1,10 @@
 from NEMO.serializers import ToolSerializer
 from NEMO.urls import router
 from NEMO.views.api import ToolViewSet
+from django.urls import path
 from rest_framework import serializers
+
+from NEMO_timezone import views
 
 
 class NewToolSerializer(ToolSerializer):
@@ -14,4 +17,6 @@ class NewToolViewSet(ToolViewSet):
 
 router.register(r"tools_with_tz", NewToolViewSet)
 
-urlpatterns = []
+urlpatterns = [
+    path("user_preferences/", views.custom_user_preferences, name="user_preferences")
+]

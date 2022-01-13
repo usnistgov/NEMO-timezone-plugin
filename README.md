@@ -23,3 +23,11 @@ Then in your `settings.py`:
 
 Go to NEMO -> Detailed Administration and select User Preferences.
 Edit or add new preferences and select the appropriate timezone.
+
+# Option
+
+To allow users to change their own timezone in user preferences, set the following in `settings.py`:
+
+```python
+USER_PREFERENCES_TZ_ENABLED = True
+```
