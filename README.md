@@ -26,6 +26,8 @@ Edit or add new preferences and select the appropriate timezone.
 
 # Option
 
+Note: Enable this option at your own risk. Users could potentially switch timezones back and forth to get around policy rules.
+
 To allow users to change their own timezone in user preferences, set the following in `settings.py`:
 
 ```python
