@@ -1,8 +1,9 @@
 import pytz
 from NEMO.models import User
-from NEMO_timezone.models import UserPreferencesTimezone
 from django.utils import timezone
 from django.utils.deprecation import MiddlewareMixin
+
+from NEMO_timezone.models import UserPreferencesTimezone
 
 
 class UserTimezoneMiddleware(MiddlewareMixin):

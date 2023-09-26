@@ -1,10 +1,10 @@
 from NEMO.models import User
+from NEMO.utilities import render_combine_responses
 from NEMO.views.users import user_preferences
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
 from django.views.decorators.http import require_http_methods
 
 from NEMO_timezone.models import UserPreferencesTimezone, common_timezones
@@ -33,10 +33,3 @@ def custom_user_preferences(request):
         pass
     dictionary = {"user_timezone": current_user_timezone, "timezones": common_timezones}
     return render_combine_responses(request, original_response, "NEMO_timezone/user_preferences_tz.html", dictionary)
-
-
-def render_combine_responses(request, original_response: HttpResponse, template_name, context):
-    """ Combines contents of an original http response with a new one """
-    additional_content = render(request, template_name, context)
-    original_response.content += additional_content.content
-    return original_response

@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 from os import path
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 
 
 this_directory = path.abspath(path.dirname(__file__))
@@ -12,7 +12,7 @@ setup(
     name="NEMO-timezone",
     use_describe_version=True,
     version=VERSION,
-    python_requires=">=3.6",
+    python_requires=">=3.7",
     description="Install multi timezone plugin for NEMO",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -21,10 +21,13 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        "NEMO>=3.13.0",
         "django",
         "djangorestframework",
     ],
+    extras_require={
+        "NEMO-CE": ["NEMO-CE>=1.0.0"],
+        "NEMO": ["NEMO>=4.3.0"],
+    },
     license="MIT",
     keywords=["NEMO"],
     classifiers=[
