@@ -1,7 +1,7 @@
-from setuptools import setup, find_packages
 from os import path
+from setuptools import find_packages, setup
 
-VERSION = "1.1.1"
+VERSION = "1.2.0"
 
 
 this_directory = path.abspath(path.dirname(__file__))
@@ -25,8 +25,8 @@ setup(
         "djangorestframework",
     ],
     extras_require={
-        "NEMO-CE": ["NEMO-CE>=1.7.0"],
-        "NEMO": ["NEMO>=4.7.0"],
+        "NEMO-CE": ["NEMO-CE>=2.4.0"],
+        "NEMO": ["NEMO>=5.5.0"],
     },
     license="MIT",
     keywords=["NEMO"],
