@@ -7,7 +7,7 @@ This means rules, input and output dates will be assumed in the user's timezone 
 This plugin is best suited for 2 or more facilities sharing an instance of NEMO across timezones.
 
 # Installation
-Install using `pip install git+https://github.com/usnistgov/NEMO-timezone-plugin@1.2.0`
+Install using `pip install git+https://github.com/usnistgov/NEMO-timezone-plugin@1.3.0`
 
 Then in your `settings.py`:
 
