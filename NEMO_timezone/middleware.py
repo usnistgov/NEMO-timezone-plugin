@@ -1,4 +1,8 @@
-import pytz
+try:
+    import zoneinfo
+except ImportError:
+    from backports import zoneinfo
+
 from NEMO.models import User
 from django.utils import timezone
 from django.utils.deprecation import MiddlewareMixin
@@ -12,7 +16,7 @@ class UserTimezoneMiddleware(MiddlewareMixin):
         try:
             tz: str = user.preferences.timezone.timezone
             if tz and isinstance(tz, str):
-                timezone.activate(pytz.timezone(tz))
+                timezone.activate(zoneinfo.ZoneInfo(tz))
             else:
                 timezone.deactivate()
         except (UserPreferencesTimezone.DoesNotExist, AttributeError):

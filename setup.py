@@ -1,7 +1,8 @@
 from os import path
+
 from setuptools import find_packages, setup
 
-VERSION = "1.2.0"
+VERSION = "1.3.0"
 
 
 this_directory = path.abspath(path.dirname(__file__))
